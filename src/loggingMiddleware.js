@@ -11,7 +11,8 @@
  * @param {string} params.message - Log message content, description
  */
 export async function logMiddleware({ stack = "frontend", level, packageName = "main", message }) {
-  const url = "https://test.affordmed.com/api/log";
+  const url = process.env.REACT_APP_LOG_API_URL;
+
 
   if (!level || !message) {
     
